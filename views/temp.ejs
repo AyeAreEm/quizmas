@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizmas - Xmas</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Christmas</h1>
+    <h1 class="question"><%= q %></h1>
+    <div class="main">
+        <form id="main">
+            <button onclick="answer = `<%= op1 %>`"><h2><%= op1 %></h2></button>
+            <button onclick="answer = `<%= op2 %>`"><h2><%= op2 %></h2></button>
+            <button onclick="answer = `<%= op3 %>`"><h2><%= op3 %></h2></button>
+            <button onclick="answer = `<%= op4 %>`"><h2><%= op4 %></h2></button>
+            <h2 style="color: rgb(11, 173, 165);"><%= qNum + 1 %> / 10</h2>
+        </form>
+    </div>
+
+    <script>
+        let answer = "";
+        let form = document.getElementById("main");
+        let href = window.location.href.split('/');
+        let url = parseInt(href[4].split('%20').join(' '));
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            let data = {qNum: url, answer}
+
+            fetch(`/${href[3]}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (url < 9) {
+                window.location.href = `./${url+1}`;
+            } else {
+                window.location.href = `/results`;
+            }
+        });
+    </script>
+</body>
+</html>
