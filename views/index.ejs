@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Quizmas</h1>
+    <h1 onclick="location.href = './rules'" style="cursor: pointer;" title="rules">Quizmas</h1>
 
     <div class="main">
         <button onclick="location.href = './christmas/0'"><h2>Christmas</h2></button>
-        <!-- <button onclick="location.href = './coding'"><h2>Coding</h2></button> -->
         <button onclick="location.href = './general/0'"><h2>General</h2></button>
-        <button onclick="location.href = './adrian'"><h2>Adrian</h2></button>
+        <button onclick="location.href = './adrian/0'"><h2>Adrian</h2></button>
     </div>
 
     <script>
@@ -68,6 +67,10 @@
 `
 
         console.log(tree)
+
+        if (!sessionStorage.getItem("points")) {
+          sessionStorage.setItem("points", 0)
+        }
     </script>
 </body>
 </html>

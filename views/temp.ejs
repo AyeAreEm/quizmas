@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizmas - Xmas</title>
+    <title>Quizmas</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Christmas</h1>
+    <h1 id="genre">Christmas</h1>
     <h1 class="question"><%= q %></h1>
     <div class="main">
         <form id="main">
@@ -25,6 +25,8 @@
         let form = document.getElementById("main");
         let href = window.location.href.split('/');
         let url = parseInt(href[4].split('%20').join(' '));
+        let genre = document.getElementById("genre");
+        genre.textContent = href[3];
 
         form.addEventListener('submit', e => {
             e.preventDefault();
@@ -36,7 +38,13 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
-            });
+            }).then(res => {
+                if (res.status == 202) {
+                    let points = parseInt(sessionStorage.getItem("points"));
+                    points += 1;
+                    sessionStorage.setItem("points", points);
+                }
+            })
 
             if (url < 9) {
                 window.location.href = `./${url+1}`;

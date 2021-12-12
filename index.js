@@ -8,17 +8,17 @@ app.set('view engine', 'ejs');
 app.use(express.static('views'));
 app.use(express.json({ limit: '10Mb'}))
 
-let points = 0;
-
 app.get('/', (req, res) => {
     // when user joins, reset all points
     res.render('index');
 });
 
+app.get('/rules', (req, res) => {
+    res.render('rules');
+});
+
 app.get('/results', (req, res) => {
-    res.render('results', {
-        points
-    })
+    res.render('results')
 });
 
 // xmas stuff
@@ -36,8 +36,7 @@ app.get('/christmas/:id', (req, res) => {
 app.post('/christmas', (req, res) => {
     try {
         if (qnas.xmas[req.body.qNum].a == req.body.answer) {
-            points += 1;
-            console.log(points)
+            res.sendStatus(202);
         }
     } catch {
         res.sendStatus(500);
@@ -59,8 +58,7 @@ app.get('/general/:id', (req, res) => {
 app.post('/general', (req, res) => {
     try {
         if (qnas.general[req.body.qNum].a == req.body.answer) {
-            points += 1;
-            console.log(points)
+            res.sendStatus(202);
         }
     } catch {
         res.sendStatus(500);
@@ -82,8 +80,7 @@ app.get('/adrian/:id', (req, res) => {
 app.post('/adrian', (req, res) => {
     try {
         if (qnas.adrian[req.body.qNum].a == req.body.answer) {
-            points += 1;
-            console.log(points)
+            res.sendStatus(202);
         }
     } catch {
         res.sendStatus(500);
