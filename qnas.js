@@ -28,7 +28,7 @@ const adrian = [
     {q: "What was the first programming language I learnt?", op1: "HTML", op2: "Python", op3: "JavaScript", op4: "CSS", a: "JavaScript"},
     {q: "How many decks of cards do I have?", op1: "64", op2: "42", op3: "69", op4: "32", a: "64"},
     {q: "What is my favourite genre of video games?", op1: "Role Playing Games", op2: "Sandbox", op3: "Platformer", op4: "First Person Shooter", a: "Role Playing Games"},
-    {q: "Which one is my 'soft spot'", op1: "Choking", op2: "Necks", op3: "Bondage", op4: "Nose rubs", a: "Nose rubs"},
+    {q: "Which one is my 'soft spot'", op1: "Choking", op2: "Necks in general", op3: "Bondage", op4: "Someone saying my name", a: "Someone saying my name"},
     {q: "When did I lose my first kiss?", op1: "Primary", op2: "Kindergarten", op3: "Secondary", op4: "I haven't lost it yet. I'm waiting until marriage", a: "Kindergarten"},
     {q: "Who is my favourite rapper?", op1: "Eminem", op2: "NF", op3: "K.A.A.N", op4: "Logic", a: "K.A.A.N"},
     {q: "What is my most listened to song of 2021?", op1: "Shy Away", op2: "INDUSTRY BABY", op3: "Circles", op4: "Right Back", a: "Shy Away"},
