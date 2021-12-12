@@ -16,6 +16,5 @@ quiz trivia website for a christmas present
     - General
     - Christmas
     - Me
-    - Gaming
 
     

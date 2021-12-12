@@ -21,6 +21,10 @@ app.get('/results', (req, res) => {
     res.render('results')
 });
 
+app.get('/finish', (req, res) => {
+    res.render('finish');
+});
+
 // xmas stuff
 app.get('/christmas/:id', (req, res) => {
     res.render('temp', {

@@ -46,7 +46,6 @@ button:hover {
 
 .main {
     width: 35%;
-    height: 40%;
     margin: auto;
     border-radius: 5px;
 }
@@ -57,4 +56,25 @@ a {
 
 a:hover {
     color: rgb(10, 133, 126);
+}
+
+.certification {
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.certification h1 {
+    color: black;
+    font-size: 25px;
+}
+
+.certification h2 {
+    color: black;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.certification p {
+    color: black;
 }

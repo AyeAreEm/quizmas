@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizmas - Finished</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Finished</h1>
+    <h2 id="certified" style="text-align: center;"></h2>
+    <div id="main" class="main" style="margin-top: 5%;"></div>
+
+    <script>
+        let certified = document.getElementById("certified");
+        let content = document.getElementById("main");
+        let points = parseInt(sessionStorage.getItem("points"));
+
+        if (!sessionStorage.getItem("points")) {
+            window.location.href = "/";
+        } else if (points >= 20) {
+            certified.textContent = `You got ${points} points in total. Since you only needed 20 points, you can get the gift`;
+            let div = document.createElement('div');
+            let certification = document.createElement("h2");
+            let mainContent = document.createElement("h1");
+            let sideContent = document.createElement("p");
+
+            certification.textContent = "Certificate of achievement";
+
+            mainContent.textContent = "'Adrian has to say yes to anything' for one time use"
+
+            sideContent.textContent = "irl adrian, explain a bit more. coding adrian is tired and not bothered to explain."
+
+            div.className = "certification";
+
+            div.appendChild(certification);
+            div.appendChild(mainContent);
+            div.appendChild(sideContent);
+            content.appendChild(div);
+        } else if (points < 20) {
+            certified.textContent = `You got ${points} points in total. You need 20 points which you didn't get. You don't get the gift and you are a loser`;
+        }
+    </script>
+</body>
+</html>
